@@ -1,0 +1,27 @@
+//- Homepage Markup
+extends ./layouts/base
+
+block content
+	a(href="#")
+		div.tnc
+	a(href="#")
+		div.about
+	div#form.section
+		div.formContainer
+			div.container
+			a(href="javascript:void(0)" onclick="window.metlife.sectionManager.changeSection('thankyou')")
+				div.submitBtn
+	div#thankyou.section
+		a(href="javascript:void(0)" onclick="window.metlife.faebookShare()")
+			div.facebookShare
+	div#landing.section.active
+		div.upper
+			a(href="javascript:void(0)" onclick="window.metlife.sectionManager.changeSection('form')")
+				div.enterBtn
+		div.instagramBar
+			div.container
+			div.clearfloat
+		div.lower
+			a(href="javascript:void(0)" onclick="window.metlife.instagram.loadImages()")
+				div.loadMoreButton Load more
+
