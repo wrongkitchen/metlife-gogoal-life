@@ -2,54 +2,66 @@
 
 define(function() {
 
-	var tagName = '石敢當';
+	var tagName = 'metlifegrowthbuddy';
 	var clientID = '68b99da4623e44f482bc5655018bd164';
-	var nextAPI = '';
-	var isLoadEnd = false;
+	var apiURL = 'https://api.instagram.com/v1/tags/'+ tagName +'/media/recent?count=50&client_id=' + clientID;
 	
 	var app = Backbone.Model.extend({
 		initialize: function(){
-			this.loadImages();
-			$('.instagramBar .container').html('');
-		},
-		loadImages: function(){
 			var _this = this;
-			if(!isLoadEnd){
-				$.ajax({
-					url: (nextAPI) ? nextAPI : 'https://api.instagram.com/v1/tags/'+ tagName +'/media/recent?count=50&client_id=' + clientID,
-					type: 'get',
-					dataType: 'jsonp',
-					success: function (pObj) {
-						if(pObj.pagination.next_url){
-							nextAPI = pObj.pagination.next_url;
-						} else {
-							isLoadEnd = true;
-						}
-						if(pObj.data.length){
-							var html = '';
-							$.each(pObj.data, function(pIndex, pData){
-								if((pIndex + 1) % 8 === 0){
-									html += '<div class="cude end">';
-								} else {
-									html += '<div class="cude">';
-								}
-								html += '<img src="' + pData.images.thumbnail.url + '" alt="" />';
-								html += '</div>';
-							});
-							$('.instagramBar .container').append(html);
-							FB.Canvas.setAutoGrow(true);
-						}
-						_this.showLoadMoreButton();
-					}
-				});
-			}
+			_this.loadImages(apiURL, function(pDatas, nextURL){
+				if(nextURL){
+					_this.loadImages(nextURL, function(pSecDatas){
+						_this.showImages($.merge(pSecDatas, pDatas));
+					});
+				} else {
+					_this.showImages(pDatas);
+				}
+			});
 		},
-		showLoadMoreButton: function(){
-			if(isLoadEnd){
-				$('.instagramBar .loadMoreButton').hide();
-			} else {
-				$('.instagramBar .loadMoreButton').show();
+		loadImages: function(pPath, pCallback){
+			var _this = this;
+			$.ajax({
+				url: pPath,
+				type: 'get',
+				dataType: 'jsonp',
+				success: function (pObj) {
+					pCallback(pObj.data, pObj.pagination.next_url);
+				}
+			});
+		},
+		showImages: function(pDatas){
+			var html = '';
+			for(var i=0; i < 16; i++){
+				var itemNumber = Math.floor(Math.random() * pDatas.length);
+				var pData = pDatas.splice(itemNumber, 1);
+				html += '<a href="' +pData[0].images.standard_resolution.url+ '">';
+				if((i + 1) % 8 === 0){
+					html += '<div class="cude end">';
+				} else {
+					html += '<div class="cude">';
+				}
+				html += '<img src="' + pData[0].images.thumbnail.url + '" alt="" />';
+				html += '</div>';
+				html += '</a>';
 			}
+			$('.instagramBar .container').html(html);
+			FB.Canvas.setAutoGrow(true);
+
+			$('.instagramBar .container').magnificPopup({
+				delegate: 'a',
+				type: 'image',
+				tLoading: 'Loading image #%curr%...',
+				mainClass: 'mfp-img-mobile',
+				gallery: {
+					enabled: true,
+					navigateByImgClick: true,
+					preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+				},
+				image: {
+					tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+				}
+			});
 		}
 	});
 	return app;
