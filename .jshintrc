@@ -51,7 +51,8 @@
         "requirejs": true,
         "_": true,
         "Backbone": true,
-        "FB": true
+        "FB": true,
+        "ga": true
     },
     "indent"        : 4
 }

@@ -10,7 +10,6 @@ define(function() {
 
 		initialize: function(){
 			var curSectionName = this.get('activeSectionName');
-			window.metlife.tracking(curSectionName);
 		},
 
 		changeSection: function(pName, pCallback){

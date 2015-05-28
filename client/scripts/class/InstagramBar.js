@@ -32,11 +32,14 @@ define(function() {
 		},
 		showImages: function(pDatas){
 			var html = '';
-			for(var i=0; i < 16; i++){
+			var isMobile = $('body').hasClass('mobile');
+			var endOffset = (isMobile) ? 6 : 8;
+			var loadNumber = (isMobile) ? 12 : 16;
+			for(var i=0; i < loadNumber; i++){
 				var itemNumber = Math.floor(Math.random() * pDatas.length);
 				var pData = pDatas.splice(itemNumber, 1);
 				html += '<a href="' +pData[0].images.standard_resolution.url+ '">';
-				if((i + 1) % 8 === 0){
+				if((i + 1) % endOffset === 0){
 					html += '<div class="cude end">';
 				} else {
 					html += '<div class="cude">';

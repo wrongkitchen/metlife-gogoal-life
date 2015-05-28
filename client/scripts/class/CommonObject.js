@@ -2,15 +2,16 @@
 
 define(function() {
 	var _co = {};
-		_co.tracking = function(){
-
+		_co.tracking = function(pPath){
+			ga('send', 'pageview', '/'+pPath);
 		};
-		_co.faebookShare = function(){
+		_co.facebookShare = function(){
+			ga('send', 'pageview', '/fbShare');
 			FB.ui({
 				method: 'share',
-				href: 'https://metlife-gogoal-life.herokuapp.com'
+				href: 'https://metlife-gogoal-life.herokuapp.com/'
 			}, function(response){
-
+				_co.sectionManager.changeSection('landing');
 			});
 		};
 	return _co;
