@@ -9,7 +9,7 @@ var taskConfig = function(grunt) {
         options: {
             port: 9010,
             livereload: 35729,
-            hostname: 'localhost'
+            hostname: '0.0.0.0'
         },
         server: {
             options: {
