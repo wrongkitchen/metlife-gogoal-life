@@ -11,26 +11,6 @@ require(['class/SectionBase', 'class/SectionManager', 'class/CommonObject', 'cla
 	var _co = CO;
     window.metlife = _co;
 
-    var checkViewPort = function(){
-        var navigateUA = navigator.userAgent;
-        if ((navigateUA.indexOf('iPhone') == -1) && (navigateUA.indexOf('iPod') == -1) && (navigateUA.indexOf('iPad') == -1)){
-            var e = window, a = 'inner';
-            var viewport = document.querySelector("meta[name=viewport]");
-            if (!('innerWidth' in window)){
-                a = 'client';
-                e = document.documentElement || document.body;
-            }
-            var initScale = new Number(e[a+"Width"] / 640);
-                initScale = initScale.toFixed(1);
-            viewport.setAttribute('content', 'width=device-width, minimum-scale=0.5, initial-scale='+initScale);
-            console.log(initScale);
-        }
-    };
-
-    $(document).ready(function(){
-        checkViewPort();
-    });
-
     _co.sectionManager = new SM({
         sections: { 
             landing        	: new SB({ el: $('#landing') }),
@@ -39,7 +19,28 @@ require(['class/SectionBase', 'class/SectionManager', 'class/CommonObject', 'cla
         },
         activeSectionName: 'landing'
     });
+    _co.sectionManager.afterChangeSection = function(pName, pCallback){
+        if(pName === 'thankyou'){
+            $('#landing .enterBtn').hide();
+        }
+        SM.prototype.afterChangeSection.call(_co.sectionManager, pName, pCallback);
+    };
 
+    var instagramAnimation = function(){
+        var $insta = $('#landing .instagram');
+        var beforePos = ($('body').hasClass('mobile')) ? '-35px' : '-38px';
+        var afterPos = ($('body').hasClass('mobile')) ? '-25px' : '-48px';
+        $insta.addClass('rotate').animate({
+            bottom: beforePos
+        }, 1000, function(){
+            $insta.removeClass('rotate').animate({
+                bottom: afterPos
+            }, 1000, function(){
+                instagramAnimation();
+            });
+        });
+    };
+    instagramAnimation();
     _co.instagram = new IB();
 
 });
