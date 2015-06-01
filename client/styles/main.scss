@@ -6,77 +6,73 @@
     &.active{ display:block; }
 }
 #thankyou{
-    height:819px; background-image: url(../images/guide-thankyou.jpg);
+    height:795px; background-image: url(../images/guide-thankyou.jpg);
     .facebookShare{ 
-        width: 109px; height: 37px; position: absolute; top: 323px; left: 350px;
+        width: 109px; height: 37px; position: absolute; top: 465px; left: 350px;
         background-repeat: no-repeat; background-size: contain;
         background-image: url(../images/btn-facebook-share.png);
     } 
 }
 #form{
-    height:819px; background-image: url(../images/guide-form.jpg);
+    height:795px; background-image: url(../images/guide-form.jpg);
     .formContainer{
-        position:absolute; width: 630px; height: 322px; top: 466px; left: 101px;
-        background-image: url(../images/form-content.jpg); background-position: center 15px;
-        background-repeat: no-repeat;
-        .container{ min-height: 290px; }
+        position: absolute; width: 667px; height: 266px; top: 498px; left: 71px; overflow: scroll;
+        .container{ min-height: 290px; padding-bottom:20px; }
     }
     .submitBtn{ 
         width:115px; height:20px; margin:0 auto;
         background-image: url(../images/btn-submit-form.jpg);
     }
 }
+.wrapper{ width:810px; margin:0 auto; position:relative; }
 #landing{
-    height:819px; 
+    height: 795px; overflow: hidden;
     .upper{
-        width:100%; height:710px; background-image: url(../images/landing.jpg);
+        width:100%; height:692px; background-image: url(../images/landing.jpg);
         overflow: hidden; position:relative;
-        .instagramLight{ 
-            width:100px; height:91px; background-image: url(../images/instagram-light.png); 
-            position:absolute; bottom:-48px; left:17px; display:none;
-        }
-        .instagram{ 
-            width:271px; height:107px; background-image: url(../images/instagram-hash.png); 
-            position:absolute; bottom: -48px; left: 17px;
-            -webkit-transition: all 1s ease;
-            -moz-transition: all 1s ease;
-            -ms-transition: all 1s ease;
-            -o-transition: all 1s ease;
-            transition: all 1s ease;
-            &.rotate{
-                -moz-transform: rotate(8deg);
-                -webkit-transform: rotate(8deg);
-                -o-transform: rotate(8deg);
-                -ms-transform: rotate(8deg);
-                transform: rotate(8deg);
-            }
-
-        }
         .enterBtn{
-            width:286px; height:210px;
-            background-image: url(../images/btn-enter-landing.png);
-            background-position: 0 0; 
-            background-repeat: no-repeat;
-            top: 306px; left: 262px;
+            width:304px; height:250px;
+            top: 310px; left: 250px;
             position: absolute; cursor: pointer;
-            &:hover{ background-position: -286px 0; }
+            .container{ position:relative; width:100%; height:100%; }
+            .normalBtn, .hoverBtn{ 
+                background-image: url(../images/btn-enter-landing.png); background-repeat: no-repeat;
+                width:100%; height:100%; position:absolute; top:0; left:0;
+            }
+            .normalBtn{ background-position: 0 0; }
+            .hoverBtn{ background-position: -304px 0; display:none; }
         }
     }
-    .instagramBar{
-        width:100%; height:100px; padding-top:2px; padding-bottom:2px;
-        .cude{ 
-            background-image: url(../images/ajax-loader.gif); margin-right:2.57px;
-            background-repeat: no-repeat; background-position: center center;
-            width:99px; height:99px; float:left; margin-bottom:2.57px;
-            img{ width:100%; }
-            &.end{ margin-right:0; }
+    .lower{
+        position:relative; background-color: #fff;
+        .instagram{ 
+            width:80px; height:79px; background-image: url(../images/instagram-hash.png); 
+            position:absolute; top: -110px; left: 43px;
+            .container{ position:relative; }
+            .instagramLight{ 
+                width:100px; height:91px; background-image: url(../images/instagram-light.png); 
+                position:absolute; top: -13px; left: -8px; opacity: 0;
+            }
+        }
+        .instagramTag{ position:absolute; top:-30px; left:0; width:161px; height:30px; background-image: url(../images/instagram-hashtxt.png); }
+        .instagramBar{
+            width:100%; height:100px; padding-top:2px; padding-bottom:2px; position:relative;
+            .container{ position:relative; }
+            .cude{ 
+                background-image: url(../images/ajax-loader.gif); margin-right:2.57px;
+                background-repeat: no-repeat; background-position: center center;
+                width:99px; height:99px; float:left; margin-bottom:2.57px;
+                img{ width:100%; }
+                &.end{ margin-right:0; }
+            }
         }
     }
 }
 .mobile{
     background-color: #3c62bc;
-    .about{ width: 125px; height: 50px; top: 10px; right: 5px; }
-    .tnc{ width: 150px; height: 50px; top: 10px; right: 155px; }
+    .wrapper{ width:640px; }
+    .about{ width: 140px; height: 50px; top: 0px; right: 0px; }
+    .tnc{ width: 150px; height: 60px; top: 0px; right: 155px; }
     .section{ width: 640px; }
     #thankyou{ 
         height:1045px; background-image: url(../images/mobile/guide-thankyou.jpg); 
@@ -85,16 +81,15 @@
     #form{ 
         height:1045px; background-image: url(../images/mobile/guide-form.jpg); 
         .formContainer { 
-            position: absolute; width: 547px; height: 280px; top: 513px; left: 44px; 
-            background-image: url(../images/mobile/form-content.jpg); background-position: center center;
-            background-repeat: no-repeat;
-
+            position: absolute; width: 547px; height: 280px; top: 514px; left: 44px; 
+            #demoImage{ width:100%; }
             .container{ min-height:250px; }
         }
     }
     #landing{
+        height:1050px;
         .upper{ 
-            height:850px; background-image: url(../images/mobile/landing.jpg); 
+            height:938px; background-image: url(../images/mobile/landing.jpg); 
             .enterBtn{ top: 395px; left: 172px; }
         }
         .instagramBar{

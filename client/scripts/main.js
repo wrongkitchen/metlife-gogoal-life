@@ -25,22 +25,46 @@ require(['class/SectionBase', 'class/SectionManager', 'class/CommonObject', 'cla
         }
         SM.prototype.afterChangeSection.call(_co.sectionManager, pName, pCallback);
     };
-
+    var instagramLightAnimation = function(){
+        setTimeout(function(){
+            var $instaLight = $('#landing .instagram .instagramLight');
+            $instaLight.animate({ opacity:1 }, 300, function(){
+                $instaLight.animate({ opacity: 0 }, 300, function(){
+                    instagramLightAnimation();
+                });
+            });
+        }, _.random(3000, 7000));
+    };  
     var instagramAnimation = function(){
         var $insta = $('#landing .instagram');
-        var beforePos = ($('body').hasClass('mobile')) ? '-35px' : '-38px';
-        var afterPos = ($('body').hasClass('mobile')) ? '-25px' : '-48px';
-        $insta.addClass('rotate').animate({
-            bottom: beforePos
+        $insta.animate({
+            top: '-110px'
         }, 1000, function(){
-            $insta.removeClass('rotate').animate({
-                bottom: afterPos
+            $insta.animate({
+                top: '-120px'
             }, 1000, function(){
                 instagramAnimation();
             });
         });
     };
+    if(!$('body').hasClass('mobile')){
+        $('#landing .instagramBar').mouseover(function(){
+            $('#landing .lower').stop().animate({ top:'-100px' }, 200);
+        });
+        $('#landing .instagramBar').mouseout(function(){
+            $('#landing .lower').stop().animate({ top:'0px' }, 200);
+        });
+        $('#landing .enterBtn').mouseover(function(){
+            $(this).find('.normalBtn').stop().fadeOut(200);
+            $(this).find('.hoverBtn').stop().fadeIn(200);
+        });
+        $('#landing .enterBtn').mouseout(function(){
+            $(this).find('.normalBtn').stop().fadeIn(200);
+            $(this).find('.hoverBtn').stop().fadeOut(200);
+        });
+    }
     instagramAnimation();
+    instagramLightAnimation();
     _co.instagram = new IB();
 
 });

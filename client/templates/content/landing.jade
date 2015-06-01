@@ -1,22 +1,30 @@
-a(href="#" onclick="ga('send', 'pageview', '/tnc')")
-	div.tnc
-a(href="https://www.metlife.com.hk/metlifetalent/tc/" onclick="ga('send', 'pageview', '/employment')" target="_blank")
-	div.about
-div#form.section
-	div.formContainer
-		div.container
-		a(href="javascript:void(0)" onclick="window.metlife.sectionManager.changeSection('thankyou')")
-			div.submitBtn
-div#thankyou.section
-	a(href="javascript:void(0)" onclick="window.metlife.facebookShare()")
-		div.facebookShare
-div#landing.section.active
-	div.upper
-		a(href="https://instagram.com/explore/tags/metlifetalents" onclick="ga('send', 'pageview', '/instagram')" target="_blank")
-			div.instagram
-		div.instagramLight
-		a(href="javascript:void(0)" onclick="window.metlife.sectionManager.changeSection('form')")
-			div.enterBtn
-	div.instagramBar
-		div.container
-		div.clearfloat
+div.wrapper
+	a(href="images/metlife.pdf" target="_blank" onclick="ga('send', 'pageview', '/tnc')")
+		div.tnc
+	a(href="https://www.metlife.com.hk/metlifetalent/tc/" onclick="ga('send', 'pageview', '/employment')" target="_blank")
+		div.about
+	div#form.section
+		div.formContainer
+			div.container
+				div(style="text-align:center;")
+					img#demoImage(src="images/form-content.jpg")
+				a(href="javascript:void(0)" onclick="window.metlife.sectionManager.changeSection('thankyou')")
+					div.submitBtn
+	div#thankyou.section
+		a(href="javascript:void(0)" onclick="window.metlife.facebookShare()")
+			div.facebookShare
+	div#landing.section.active
+		div.upper
+			a(href="javascript:void(0)" onclick="window.metlife.sectionManager.changeSection('form')")
+				div.enterBtn
+					div.container
+						div.normalBtn
+						div.hoverBtn
+		div.lower
+			a(href="https://instagram.com/explore/tags/gogoallife" onclick="ga('send', 'pageview', '/instagram')" target="_blank")
+				div.instagram
+					div.instagramLight
+				div.instagramTag
+			div.instagramBar
+				div.container
+				div.clearfloat
