@@ -11,7 +11,7 @@ div.wrapper
 				a(href="javascript:void(0)" onclick="window.metlife.sectionManager.changeSection('thankyou')")
 					div.submitBtn
 	div#thankyou.section
-		a(href="javascript:void(0)" onclick="window.metlife.facebookShare()")
+		a(href="http://www.facebook.com/sharer.php?u=https://metlife-gogoal-life.herokuapp.com/" target="_blank" onclick="window.metlife.sectionManager.changeSection('landing')")
 			div.facebookShare
 	div#landing.section.active
 		div.upper
@@ -21,6 +21,7 @@ div.wrapper
 						div.normalBtn
 						div.hoverBtn
 		div.lower
+			div.mobileArrow
 			a(href="https://instagram.com/explore/tags/gogoallife" onclick="ga('send', 'pageview', '/instagram')" target="_blank")
 				div.instagram
 					div.instagramLight

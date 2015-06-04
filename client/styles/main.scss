@@ -1,6 +1,6 @@
 .clearfloat{ clear:both; }
-.tnc{ position:absolute; width:130px; height:20px; top:10px; right:160px; z-index:10; }
-.about{ position: absolute; width: 100px; height: 20px; top: 10px; right: 35px; z-index: 10; }
+.tnc{ position:absolute; width:130px; height:50px; top: 0px; right: 115px; z-index:10; }
+.about{ position: absolute; width: 100px; height: 50px; top: 0px; right: 10px; z-index: 10; }
 .section{ 
     position:relative; width:810px; margin:0 auto; display: none;
     &.active{ display:block; }
@@ -31,13 +31,12 @@
         width:100%; height:692px; background-image: url(../images/landing.jpg);
         overflow: hidden; position:relative;
         .enterBtn{
-            width:304px; height:250px;
-            top: 310px; left: 250px;
+            height:250px; top: 310px; left: 0;
             position: absolute; cursor: pointer;
             .container{ position:relative; width:100%; height:100%; }
             .normalBtn, .hoverBtn{ 
                 background-image: url(../images/btn-enter-landing.png); background-repeat: no-repeat;
-                width:100%; height:100%; position:absolute; top:0; left:0;
+                width:304px; height:100%; margin-left:165px; position:absolute; top:0; left:50%; margin-left:-152px; 
             }
             .normalBtn{ background-position: 0 0; }
             .hoverBtn{ background-position: -304px 0; display:none; }
@@ -78,6 +77,10 @@
         height:1045px; background-image: url(../images/mobile/guide-thankyou.jpg); 
         .facebookShare{ top: 405px; left: 275px; }
     }
+    .mobileArrow{
+        width: 50px; height: 50px; z-index: 10; left: 50%; margin-left: -25px; top: -60px;
+        position: absolute; background-color: #2ce; 
+    }
     #form{ 
         height:1045px; background-image: url(../images/mobile/guide-form.jpg); 
         .formContainer { 
@@ -87,13 +90,28 @@
         }
     }
     #landing{
-        height:1050px;
+        height:1047px;
         .upper{ 
             height:938px; background-image: url(../images/mobile/landing.jpg); 
-            .enterBtn{ top: 395px; left: 172px; }
+            .enterBtn{ 
+                top: 415px; height:256px;
+                .normalBtn, .hoverBtn{ 
+                    background-image: url(../images/mobile/btn-enter-landing.png); 
+                    width:330px; margin-left:165px;
+                }
+            }
+        }
+        .lower{
+            -webkit-transition: top 300ms ease;
+            -moz-transition: top 300ms ease;
+            -ms-transition: top 300ms ease;
+            -o-transition: top 300ms ease;
+            transition: top 300ms ease;
+            top:0;
+            &.active{ top:-107px; }
         }
         .instagramBar{
-            height:105px; background-color:#FFF;
+            height:auto; background-color:#FFF;
             .cude{ 
                 margin-right:2px; margin-bottom:2px; width:105px; height:105px;
                 &.end{ margin-right:0; }

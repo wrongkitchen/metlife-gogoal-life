@@ -34,7 +34,7 @@ define(function() {
 			var html = '';
 			var isMobile = $('body').hasClass('mobile');
 			var endOffset = (isMobile) ? 6 : 8;
-			var loadNumber = (isMobile) ? 6 : 16;
+			var loadNumber = (isMobile) ? 12 : 16;
 			for(var i=0; i < loadNumber; i++){
 				var itemNumber = Math.floor(Math.random() * pDatas.length);
 				var pData = pDatas.splice(itemNumber, 1);

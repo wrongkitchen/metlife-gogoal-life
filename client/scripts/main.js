@@ -62,6 +62,14 @@ require(['class/SectionBase', 'class/SectionManager', 'class/CommonObject', 'cla
             $(this).find('.normalBtn').stop().fadeIn(200);
             $(this).find('.hoverBtn').stop().fadeOut(200);
         });
+    } else {
+        $('.mobileArrow').on('click', function(){
+            if($('#landing .lower').hasClass('active')){
+                $('#landing .lower').removeClass('active');
+            } else {
+                $('#landing .lower').addClass('active');
+            }
+        });
     }
     instagramAnimation();
     instagramLightAnimation();
