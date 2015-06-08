@@ -35,7 +35,7 @@ require(['class/SectionBase', 'class/SectionManager', 'class/CommonObject', 'cla
             submittable = false; $('.formContainer .email').addClass('empty'); 
         }
         if(!($('#formTnc').is(":checked"))){ 
-            submittable = false;
+            submittable = false; $('.formContainer .tncInput').addClass('empty'); 
         }
         if(!submittable){
             $('.formContainer').scrollTop(0);
