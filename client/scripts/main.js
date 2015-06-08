@@ -9,8 +9,48 @@ require(['class/SectionBase', 'class/SectionManager', 'class/CommonObject', 'cla
     function(SB, SM, CO, IB){
 
 	var _co = CO;
+
     window.metlife = _co;
 
+    $("select").selectBoxIt();
+
+    var validateEmail = function (email) {
+        var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+        return re.test(email);
+    }
+
+    _co.formSubmit = function(){
+        var submittable = true;
+        $('.formFileld').removeClass('empty');
+        if($('#formDate').val() == ''){ submittable = false; $('.formContainer .date').addClass('empty'); }
+        if($('#formName').val() == ''){ submittable = false; $('.formContainer .name').addClass('empty'); }
+        if($('#formMobile').val() == ''){ 
+            submittable = false; $('.formContainer .mobileInput').addClass('empty'); 
+        } else if($('#formMobile').val().length != 8){
+            submittable = false; $('.formContainer .mobileInput').addClass('empty'); 
+        }
+        if($('#formEmail').val() == ''){ 
+            submittable = false; $('.formContainer .email').addClass('empty'); 
+        } else if(!validateEmail($('#formEmail').val())){
+            submittable = false; $('.formContainer .email').addClass('empty'); 
+        }
+        if(!($('#formTnc').is(":checked"))){ 
+            submittable = false;
+        }
+        if(!submittable){
+            $('.formContainer').scrollTop(0);
+        } else {
+            _co.sectionManager.changeSection('thankyou')
+        }
+        // if($('#formTnc').val() === '')
+    };
+
+    _co.fbShare = function(){
+        FB.ui({
+            method: 'share',
+            href: 'http://metlife-gogoal-life.herokuapp.com'
+        }, function(response){});
+    };
     _co.sectionManager = new SM({
         sections: { 
             landing        	: new SB({ el: $('#landing') }),
@@ -49,10 +89,10 @@ require(['class/SectionBase', 'class/SectionManager', 'class/CommonObject', 'cla
     };
     if(!$('body').hasClass('mobile')){
         $('#landing .instagramBar').mouseover(function(){
-            $('#landing .lower').stop().animate({ top:'-100px' }, 200);
+            $('#landing .lower').stop().animate({ top:'-100px' }, 100);
         });
         $('#landing .instagramBar').mouseout(function(){
-            $('#landing .lower').stop().animate({ top:'0px' }, 200);
+            $('#landing .lower').stop().animate({ top:'0px' }, 100);
         });
         $('#landing .enterBtn').mouseover(function(){
             $(this).find('.normalBtn').stop().fadeOut(200);

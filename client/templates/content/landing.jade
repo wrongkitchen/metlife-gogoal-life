@@ -1,21 +1,75 @@
 div.wrapper
-	a(href="images/metlife.pdf" target="_blank" onclick="ga('send', 'pageview', '/tnc')")
-		div.tnc
-	a(href="https://www.metlife.com.hk/metlifetalent/tc/" onclick="ga('send', 'pageview', '/employment')" target="_blank")
-		div.about
 	div#form.section
+		a(href="images/metlife.pdf" target="_blank" onclick="ga('send', 'pageview', '/tnc')")
+			div.tnc 
+			//- 詳細條款及細則
+		a(href="https://www.metlife.com.hk/metlifetalent/tc/" onclick="ga('send', 'pageview', '/employment')" target="_blank")
+			div.about 
+			//- 關於就業機會
+		a(href="javascript:void(0)" onclick="window.metlife.sectionManager.changeSection('landing')")
+			div.backBtn 
+		//- 返回
 		div.formContainer
 			div.container
-				div(style="text-align:center;")
-					img#demoImage(src="images/form-content.jpg")
-				a(href="javascript:void(0)" onclick="window.metlife.sectionManager.changeSection('thankyou')")
-					div.submitBtn
+				div.formUpper
+					div.date.formFileld
+						div.label
+						div.textInput 
+							select(name="date")#formDate
+								option(value="") Select date
+								option(value="2015/7/11") 2015/7/11
+								option(value="2015/7/18") 2015/7/18
+							div.errorMsg
+						div.clearfloat
+					div.name.formFileld
+						div.label
+						div.textInput 
+							input#formName(type="text")
+							div.errorMsg
+						div.clearfloat
+					div.mobileInput.formFileld
+						div.label
+						div.textInput 
+							input#formMobile(type="text" maxlength='8')
+							div.errorMsg
+						div.clearfloat
+					div.email.formFileld
+						div.label
+						div.textInput 
+							input#formEmail(type="text")
+							div.errorMsg
+						div.clearfloat
+				div.formLower
+					div.tncInput
+						div.label
+						div.textInput 
+							input(type="checkbox" value="accepted")#formTnc
+						div.clearfloat
+					div.submitBtnContain
+						a(href="javascript:void(0)" onclick="window.metlife.formSubmit()")
+							div.submitBtn
 	div#thankyou.section
-		a(href="http://www.facebook.com/sharer.php?u=https://metlife-gogoal-life.herokuapp.com/" target="_blank" onclick="window.metlife.sectionManager.changeSection('landing')")
-			div.facebookShare
+		a(href="images/metlife.pdf" target="_blank" onclick="ga('send', 'pageview', '/tnc')")
+				div.tnc 
+				//- 詳細條款及細則
+			a(href="https://www.metlife.com.hk/metlifetalent/tc/" onclick="ga('send', 'pageview', '/employment')" target="_blank")
+				div.about 
+				//- 關於就業機會
+		if platform == 'desktop'
+			a(href="javascript:void(0)" onclick="window.metlife.fbShare();window.metlife.sectionManager.changeSection('landing')")
+				div.facebookShare
+		else
+			a(href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Fmetlife-gogoal-life.herokuapp.com%2F" target="_blank" onclick="window.metlife.sectionManager.changeSection('landing')")
+				div.facebookShare
 	div#landing.section.active
+		a(href="images/metlife.pdf" target="_blank" onclick="ga('send', 'pageview', '/tnc')")
+					div.tnc 
+					//- 詳細條款及細則
+				a(href="https://www.metlife.com.hk/metlifetalent/tc/" onclick="ga('send', 'pageview', '/employment')" target="_blank")
+					div.about 
+					//- 關於就業機會
 		div.upper
-			a(href="javascript:void(0)" onclick="window.metlife.sectionManager.changeSection('form')")
+			a(href="#" onclick="window.metlife.sectionManager.changeSection('form')")
 				div.enterBtn
 					div.container
 						div.normalBtn

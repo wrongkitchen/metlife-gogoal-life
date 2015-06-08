@@ -38,7 +38,7 @@ define(function() {
 			for(var i=0; i < loadNumber; i++){
 				var itemNumber = Math.floor(Math.random() * pDatas.length);
 				var pData = pDatas.splice(itemNumber, 1);
-				html += '<a href="' +pData[0].images.standard_resolution.url+ '">';
+				html += '<a rel="group1" class="popupImages" href="' +pData[0].images.standard_resolution.url+ '">';
 				if((i + 1) % endOffset === 0){
 					html += '<div class="cude end">';
 				} else {
@@ -50,22 +50,32 @@ define(function() {
 			}
 			html += '<div class="clearfloat"></div>';
 			$('.instagramBar .container').html(html);
-			FB.Canvas.setAutoGrow(true);
-
-			$('.instagramBar .container').magnificPopup({
-				delegate: 'a',
-				type: 'image',
-				tLoading: 'Loading image #%curr%...',
-				mainClass: 'mfp-img-mobile',
-				gallery: {
-					enabled: true,
-					navigateByImgClick: true,
-					preload: [0,1] // Will preload 0 - before current, and 1 after the current image
-				},
-				image: {
-					tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
-				}
+			$(".popupImages").fancybox({
+				'transitionIn'	:	'elastic',
+				'transitionOut'	:	'elastic',
+				'speedIn'		:	600, 
+				'speedOut'		:	200, 
+				'overlayShow'	:	false,
+				'padding' 		: 	0,
+				'showNavArrows' : 	true,
+				'showCloseButton' : false
 			});
+
+			FB.Canvas.setAutoGrow(true);
+			// $('.instagramBar .container').magnificPopup({
+			// 	delegate: '.popupImage',
+			// 	type: 'image',
+			// 	fixedBgPos: false,
+			// 	fixedContentPos: false,
+			// 	gallery: {
+			// 		enabled: true,
+			// 		navigateByImgClick: false,
+			// 		preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+			// 	},
+			// 	image: {
+			// 		tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+			// 	}
+			// });
 		}
 	});
 	return app;

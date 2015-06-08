@@ -29,7 +29,6 @@ var taskConfig = function(grunt) {
                 }
             },
             src: [
-                '<%= yeogurt.client %>/templates/layouts/base.jade'
             ]
         }
     });

@@ -1,10 +1,34 @@
 .clearfloat{ clear:both; }
-.tnc{ position:absolute; width:130px; height:50px; top: 0px; right: 115px; z-index:10; }
-.about{ position: absolute; width: 100px; height: 50px; top: 0px; right: 10px; z-index: 10; }
+.tnc{ 
+    position:absolute; width:92px; height:50px; top: 3px; right: 130px; z-index:10; 
+    background-image: url(../images/tnc.png); background-position: 0 center; background-repeat: no-repeat;
+    &:hover{ background-position: -92px center; }
+}
+.about{ 
+    position: absolute; width: 78px; height: 50px;   top: 4px; right: 14px; z-index: 10; 
+    background-image: url(../images/op.png); background-position: 0 center; background-repeat: no-repeat;
+    &:hover{ background-position: -78px center; }
+}
+canvas{ display:none !important; opacity: 0!important; }
 .section{ 
     position:relative; width:810px; margin:0 auto; display: none;
     &.active{ display:block; }
 }
+.backBtn{
+      position: absolute;
+  top: 23px; cursor:pointer;
+  left: 25px;
+  color: #FFF;
+  font-size: 18px;
+  background-image: url(/images/arrow-left-icon.png);
+  padding-left: 26px;
+  background-position: left center;
+  background-repeat: no-repeat;
+  height: 23px;
+}
+.fancybox-next span{ visibility: visible; }
+.fancybox-prev span{ visibility: visible; }
+.fancybox-close{ display: none; }
 #thankyou{
     height:795px; background-image: url(../images/guide-thankyou.jpg);
     .facebookShare{ 
@@ -17,10 +41,66 @@
     height:795px; background-image: url(../images/guide-form.jpg);
     .formContainer{
         position: absolute; width: 667px; height: 266px; top: 498px; left: 71px; overflow: scroll;
-        .container{ min-height: 290px; padding-bottom:20px; }
+        .container{ 
+            width:667px; height:414px; padding-bottom:20px; position:relative; 
+            .formUpper{ height:220px; overflow: hidden; }
+            .formLower{
+                height:235px; overflow: hidden;
+                background-image: url(../images/form-content.jpg); background-repeat: no-repeat;
+                background-position: 0 -211px;
+            }
+            .date, .name, .mobileInput, .email, .tncInput{
+                margin:0 0 30px 20px;
+            }
+            .date, .name, .mobileInput, .email{ 
+                position:relative;
+                .label{ width:208px; height:20px; background-position: left center; background-repeat: no-repeat; }
+                .label, .textInput{ float:left; } 
+                .errorMsg{ 
+                    position:absolute;  height:14px; width:100%; background-repeat: no-repeat; top:22px; display: none;
+                } 
+                &.empty .errorMsg{ display:block; }
+                input{ width: 402px; height: 13px; font-size: 12px; } 
+            }
+            .name{
+                .label{ background-image: url(../images/label-name.jpg); background-position: top left; }
+                .errorMsg{ background-image: url(../images/error-message-name.jpg); }
+            }
+            .mobileInput{
+                .label{ background-image: url(../images/label-mobile.jpg); background-position: top left; }
+                .errorMsg{ background-image: url(../images/error-message-mobile.jpg); }
+            } 
+            .email{
+                .label{ background-image: url(../images/label-email.jpg); height:55px; background-position: top left; }
+                .errorMsg{ background-image: url(../images/error-message-email.jpg); }
+            }
+            .tncInput{ 
+                width: 20px; text-align: center; height: 20px; top: 366px; left: 617px; 
+                position: absolute; margin: 0; 
+            }
+            .date{ 
+                width: 100%; height: 19px; margin-top:25px;
+                .label{ background-image: url(../images/label-date.jpg); background-position: top left; }
+                .errorMsg{ background-image: url(../images/error-message-date.jpg); }
+                .selectboxit-container .selectboxit{
+                    height: 17px; border-radius: 0px; background: #FFF; 
+                    width: 114px !important; line-height: 20px; border:1px solid #bdbfc1;
+                }
+                .selectboxit .selectboxit-arrow-container .selectboxit-arrow{ display:none; }
+                span.selectboxit-arrow-container{ 
+                    background-image: url(../images/dropdown-arrow.jpg); 
+                    background-position: center right; background-repeat: repeat-y;
+                }
+                .selectboxit-container span, .selectboxit-container .selectboxit-options a{
+                    height:18px; line-height: 19px; text-indent: 7px; font-size:11px;
+                    max-width: none !important;
+                }
+            }
+        }
+        .submitBtnContain{ position:absolute; bottom:-10px; left:0; width:100%; height:50px; }
     }
     .submitBtn{ 
-        width:115px; height:20px; margin:0 auto;
+        width: 154px; height: 27px; margin:0 auto;
         background-image: url(../images/btn-submit-form.jpg);
     }
 }
@@ -31,7 +111,7 @@
         width:100%; height:692px; background-image: url(../images/landing.jpg);
         overflow: hidden; position:relative;
         .enterBtn{
-            height:250px; top: 310px; left: 0;
+            height:250px; top: 310px; left: 260px; width:304px;
             position: absolute; cursor: pointer;
             .container{ position:relative; width:100%; height:100%; }
             .normalBtn, .hoverBtn{ 
@@ -44,6 +124,7 @@
     }
     .lower{
         position:relative; background-color: #fff;
+        &.active{ top:-100px !important; }
         .instagram{ 
             width:80px; height:79px; background-image: url(../images/instagram-hash.png); 
             position:absolute; top: -110px; left: 43px;
@@ -58,9 +139,9 @@
             width:100%; height:100px; padding-top:2px; padding-bottom:2px; position:relative;
             .container{ position:relative; }
             .cude{ 
-                background-image: url(../images/ajax-loader.gif); margin-right:2.57px;
+                background-image: url(../images/ajax-loader.gif); margin-right:3px;
                 background-repeat: no-repeat; background-position: center center;
-                width:99px; height:99px; float:left; margin-bottom:2.57px;
+                width:98.6px; height:98.6px; float:left; margin-bottom:3px;
                 img{ width:100%; }
                 &.end{ margin-right:0; }
             }
@@ -70,23 +151,65 @@
 .mobile{
     background-color: #3c62bc;
     .wrapper{ width:640px; }
-    .about{ width: 140px; height: 50px; top: 0px; right: 0px; }
-    .tnc{ width: 150px; height: 60px; top: 0px; right: 155px; }
+    .about{ 
+        width: 110px; height: 50px; top: 7px; right: 21px; line-height: 67px; font-size: 18px; color: #FFF;
+        background-image: url(../images/mobile/op.png);
+        &:hover{ background-position: -110px center; }
+    }
+    .tnc{ 
+        width: 130px; height: 60px; top: 2px; right: 174px; line-height: 67px; font-size: 18px; color: #FFF; 
+        background-image: url(../images/mobile/tnc.png); 
+        &:hover{ background-position: -130px center; }
+    }
     .section{ width: 640px; }
     #thankyou{ 
         height:1045px; background-image: url(../images/mobile/guide-thankyou.jpg); 
         .facebookShare{ top: 405px; left: 275px; }
     }
     .mobileArrow{
-        width: 50px; height: 50px; z-index: 10; left: 50%; margin-left: -25px; top: -60px;
-        position: absolute; background-color: #2ce; 
+        width: 180px; height: 50px; z-index: 10; left: 50%; margin-left: -90px; top: -70px;
+        position: absolute; background-image: url(../images/arrow-up-icon-download.png);
+        background-repeat: no-repeat; background-position: center 36px;
     }
     #form{ 
         height:1045px; background-image: url(../images/mobile/guide-form.jpg); 
         .formContainer { 
             position: absolute; width: 547px; height: 280px; top: 514px; left: 44px; 
             #demoImage{ width:100%; }
-            .container{ min-height:250px; }
+            .container{ 
+                width: 547px; height:364px; background-position: top center; overflow: hidden;
+                .formUpper{ height:170px; }
+                .formLower{
+                    height:235px; background-image: url(../images/mobile/form-content.jpg); background-position: 0 -170px;
+                }
+                .tncInput{ top: 288px; left: 508px; }
+                .date, .name, .mobileInput, .email{ 
+                    margin:0 0 14px 20px;
+                    .label{ width:171px; }
+                    // .label, .textInput{ float:left; } 
+                    .errorMsg{ top: 24px; } 
+                    // &.empty .errorMsg{ display:block; }
+                    input{ width: 328px; height: 12px; } 
+                }
+                .date .errorMsg{ top: 22px; } 
+                .date{ 
+                    margin-top:25px; 
+                    .label{ background-image: url(../images/mobile/label-date.jpg); }
+                    .errorMsg{ background-image: url(../images/mobile/error-message-date.jpg); }
+                }
+                .name{
+                    .label{ background-image: url(../images/mobile/label-name.jpg); }
+                    .errorMsg{ background-image: url(../images/mobile/error-message-name.jpg); }
+                }
+                .mobileInput{
+                    .label{ background-image: url(../images/mobile/label-mobile.jpg); }
+                    .errorMsg{ background-image: url(../images/mobile/error-message-mobile.jpg); }
+                } 
+                .email{
+                    .label{ background-image: url(../images/mobile/label-email.jpg); height:55px; }
+                    .errorMsg{ background-image: url(../images/mobile/error-message-email.jpg); }
+                }
+            }
         }
     }
     #landing{
@@ -94,10 +217,10 @@
         .upper{ 
             height:938px; background-image: url(../images/mobile/landing.jpg); 
             .enterBtn{ 
-                top: 415px; height:256px;
+                top: 415px; height:256px; width:330px; left:160px;
                 .normalBtn, .hoverBtn{ 
                     background-image: url(../images/mobile/btn-enter-landing.png); 
-                    width:330px; margin-left:165px;
+                    width:330px; left:0; margin:0;
                 }
             }
         }
