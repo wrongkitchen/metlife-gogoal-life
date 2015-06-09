@@ -79,7 +79,7 @@ canvas{ display:none !important; opacity: 0!important; }
                 width: 20px; text-align: center; height: 20px; top: 366px; left: 617px; 
                 position: absolute; margin: 0; 
                 .errorMsg{ 
-                    background-image: url(../images/error-message-tnc.jpg); 
+                    background-image: url(../images/error-message-tnc.jpg); background-repeat: no-repeat;
                     width: 228px; height: 14px; position: absolute; right: 0; top: 20px; display:none;
                 }
                 &.empty .errorMsg{ display:block; }
@@ -182,6 +182,7 @@ canvas{ display:none !important; opacity: 0!important; }
         .formContainer { 
             position: absolute; width: 547px; height: 303px; top: 491px; left: 44px; 
             #demoImage{ width:100%; }
+            .submitBtnContain{ bottom: 25px; }
             .container{ 
                 width: 547px; height:364px; background-position: top center; overflow: hidden;
                 .formUpper{ height:170px; }
@@ -216,7 +217,10 @@ canvas{ display:none !important; opacity: 0!important; }
                     .errorMsg{ background-image: url(../images/mobile/error-message-email.jpg); }
                 }
                 .tncInput{
-                    .errorMsg{ background-image: url(../images/mobile/error-message-tnc.jpg); }
+                    .errorMsg{ 
+                        background-image: url(../images/mobile/error-message-tnc.jpg); 
+                        background-position: top right;
+                    }
                 }
             }
         }
