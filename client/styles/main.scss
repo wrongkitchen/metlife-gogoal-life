@@ -112,7 +112,7 @@ canvas{ display:none !important; opacity: 0!important; }
 }
 .wrapper{ width:810px; margin:0 auto; position:relative; }
 #landing{
-    height: 795px; overflow: hidden;
+    height: 693px; overflow: hidden;
     .upper{
         width:100%; height:692px; background-image: url(../images/landing.jpg);
         overflow: hidden; position:relative;
@@ -143,6 +143,7 @@ canvas{ display:none !important; opacity: 0!important; }
         .instagramTag{ position:absolute; top:-30px; left:0; width:161px; height:30px; background-image: url(../images/instagram-hashtxt.png); }
         .instagramBar{
             width:100%; height:100px; padding-top:2px; padding-bottom:2px; position:relative;
+            display:none;
             .container{ position:relative; }
             .cude{ 
                 background-image: url(../images/ajax-loader.gif); margin-right:3px;
@@ -175,12 +176,13 @@ canvas{ display:none !important; opacity: 0!important; }
     .mobileArrow{
         width: 180px; height: 50px; z-index: 10; left: 50%; margin-left: -90px; top: -70px;
         position: absolute; background-image: url(../images/arrow-up-icon-download.png);
-        background-repeat: no-repeat; background-position: center 36px;
+        background-repeat: no-repeat; background-position: center 36px; display:none;
     }
     #form{ 
         height:1045px; background-image: url(../images/mobile/guide-form.jpg); 
         .formContainer { 
-            position: absolute; width: 547px; height: 303px; top: 491px; left: 44px; 
+            position: absolute; width: 547px; height: 375px; top: 491px; left: 44px; 
+            background-color: #FFF; overflow: hidden;
             #demoImage{ width:100%; }
             .submitBtnContain{ bottom: 25px; }
             .container{ 
@@ -226,7 +228,7 @@ canvas{ display:none !important; opacity: 0!important; }
         }
     }
     #landing{
-        height:1047px;
+        height:938px;
         .upper{ 
             height:938px; background-image: url(../images/mobile/landing.jpg); 
             .enterBtn{ 
