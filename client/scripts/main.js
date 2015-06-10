@@ -78,10 +78,10 @@ require(['class/SectionBase', 'class/SectionManager', 'class/CommonObject', 'cla
     var instagramAnimation = function(){
         var $insta = $('#landing .instagram');
         $insta.animate({
-            top: '-110px'
+            top: '-150px'
         }, 1000, function(){
             $insta.animate({
-                top: '-120px'
+                top: '-160px'
             }, 1000, function(){
                 instagramAnimation();
             });

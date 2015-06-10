@@ -46,11 +46,11 @@ define(function() {
 		},
 		afterChangeSection: function(pName, pCallback){
 			var _this = this;
+			if(window.FB){
+				FB.Canvas.setSize({ height: _this.getCurrentSectionInstance().get('el').height() + 5 });
+			}
 			if(pCallback){
 				pCallback();
-			}
-			if(window.FB){
-				FB.Canvas.setSize({ height: _this.getCurrentSectionInstance().get('el').height() });
 			}
 		}
 

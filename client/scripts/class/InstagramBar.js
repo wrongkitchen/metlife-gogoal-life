@@ -60,8 +60,7 @@ define(function() {
 				'showNavArrows' : 	true,
 				'showCloseButton' : false
 			});
-
-			FB.Canvas.setAutoGrow(true);
+			
 			// $('.instagramBar .container').magnificPopup({
 			// 	delegate: '.popupImage',
 			// 	type: 'image',
