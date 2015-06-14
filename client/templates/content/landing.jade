@@ -11,44 +11,47 @@ div.wrapper
 		//- 返回
 		div.formContainer
 			div.container
-				div.formUpper
-					div.date.formFileld
-						div.label
-						div.textInput 
-							select(name="date")#formDate
-								option(value="") － 請選擇 －
-								option(value="2015/7/11") 2015/7/11
-								option(value="2015/7/18") 2015/7/18
-							div.errorMsg
-						div.clearfloat
-					div.name.formFileld
-						div.label
-						div.textInput 
-							input#formName(type="text")
-							div.errorMsg
-						div.clearfloat
-					div.mobileInput.formFileld
-						div.label
-						div.textInput 
-							input#formMobile(type="text" maxlength='8')
-							div.errorMsg
-						div.clearfloat
-					div.email.formFileld
-						div.label
-						div.textInput 
-							input#formEmail(type="text")
-							div.errorMsg
-						div.clearfloat
-				div.formLower
-					div.tncInput
-						div.label
-						div.textInput 
-							input(type="checkbox" value="accepted")#formTnc
-							div.errorMsg
-						div.clearfloat
-					div.submitBtnContain
-						a(href="javascript:void(0)" onclick="window.metlife.formSubmit()")
-							div.submitBtn
+				form#21(name="leadGen" method="post" action="https://www.stage.metlife.com.hk/cms/leadGen/leadsValue/add.aspx")
+					input(type='hidden' name="campaignId" value="21")
+					input(type="hidden" name="lang" value="chi")
+					div.formUpper
+						div.date.formFileld
+							div.label
+							div.textInput 
+								select(name="35")#35
+									option(value="") － 請選擇 －
+									option(value="2015/7/11") 2015/7/11
+									option(value="2015/7/18") 2015/7/18
+								div.errorMsg
+							div.clearfloat
+						div.name.formFileld
+							div.label
+							div.textInput 
+								input#2(type="text" name="2")
+								div.errorMsg
+							div.clearfloat
+						div.mobileInput.formFileld
+							div.label
+							div.textInput 
+								input#3(type="text" maxlength='8' name="3")
+								div.errorMsg
+							div.clearfloat
+						div.email.formFileld
+							div.label
+							div.textInput 
+								input#4(type="text" name="4")
+								div.errorMsg
+							div.clearfloat
+					div.formLower
+						div.tncInput
+							div.label
+							div.textInput 
+								input(type="checkbox" name="34" value="yes")#34
+								div.errorMsg
+							div.clearfloat
+						div.submitBtnContain
+							a(href="javascript:void(0)" onclick="window.metlife.formSubmit()")
+								div.submitBtn
 	div#thankyou.section
 		a(href="images/metlife.pdf" target="_blank" onclick="ga('send', 'pageview', '/tnc')")
 				div.tnc 

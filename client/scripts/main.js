@@ -22,27 +22,27 @@ require(['class/SectionBase', 'class/SectionManager', 'class/CommonObject', 'cla
     _co.formSubmit = function(){
         var submittable = true;
         $('.formFileld').removeClass('empty');
-        if($('#formDate').val() == ''){ submittable = false; $('.formContainer .date').addClass('empty'); }
-        if($('#formName').val() == ''){ submittable = false; $('.formContainer .name').addClass('empty'); }
-        if($('#formMobile').val() == ''){ 
+        if($('#35').val() == ''){ submittable = false; $('.formContainer .date').addClass('empty'); }
+        if($('#2').val() == ''){ submittable = false; $('.formContainer .name').addClass('empty'); }
+        if($('#3').val() == ''){ 
             submittable = false; $('.formContainer .mobileInput').addClass('empty'); 
-        } else if($('#formMobile').val().length != 8){
+        } else if($('#3').val().length != 8){
             submittable = false; $('.formContainer .mobileInput').addClass('empty'); 
         }
-        if($('#formEmail').val() == ''){ 
+        if($('#4').val() == ''){ 
             submittable = false; $('.formContainer .email').addClass('empty'); 
-        } else if(!validateEmail($('#formEmail').val())){
+        } else if(!validateEmail($('#4').val())){
             submittable = false; $('.formContainer .email').addClass('empty'); 
         }
-        if(!($('#formTnc').is(":checked"))){ 
+        if(!($('#34').is(":checked"))){ 
             submittable = false; $('.formContainer .tncInput').addClass('empty'); 
         }
         if(!submittable){
             $('.formContainer').scrollTop(0);
         } else {
-            _co.sectionManager.changeSection('thankyou')
+            $('form#21').submit();
         }
-        // if($('#formTnc').val() === '')
+        // if($('#34').val() === '')
     };
 
     _co.fbShare = function(){
