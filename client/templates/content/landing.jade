@@ -52,19 +52,19 @@ div.wrapper
 						div.submitBtnContain
 							a(href="javascript:void(0)" onclick="window.metlife.formSubmit()")
 								div.submitBtn
-	div#thankyou.section
-		a(href="images/metlife.pdf" target="_blank" onclick="ga('send', 'pageview', '/tnc')")
-				div.tnc 
-				//- 詳細條款及細則
-			a(href="https://www.metlife.com.hk/metlifetalent/tc/" onclick="ga('send', 'pageview', '/employment')" target="_blank")
-				div.about 
-				//- 關於就業機會
-		if platform == 'desktop'
-			a(href="javascript:void(0)" onclick="window.metlife.fbShare();window.metlife.sectionManager.changeSection('landing')")
-				div.facebookShare
-		else
-			a(href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Fmetlife-gogoal-life.herokuapp.com%2F" target="_blank" onclick="window.metlife.sectionManager.changeSection('landing')")
-				div.facebookShare
+	//- div#thankyou.section
+	//- 	a(href="images/metlife.pdf" target="_blank" onclick="ga('send', 'pageview', '/tnc')")
+	//- 			div.tnc 
+	//- 			//- 詳細條款及細則
+	//- 		a(href="https://www.metlife.com.hk/metlifetalent/tc/" onclick="ga('send', 'pageview', '/employment')" target="_blank")
+	//- 			div.about 
+	//- 			//- 關於就業機會
+	//- 	if platform == 'desktop'
+	//- 		a(href="javascript:void(0)" onclick="window.metlife.fbShare();window.metlife.sectionManager.changeSection('landing')")
+	//- 			div.facebookShare
+	//- 	else
+	//- 		a(href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Fmetlife-gogoal-life.herokuapp.com%2F" target="_blank" onclick="window.metlife.sectionManager.changeSection('landing')")
+	//- 			div.facebookShare
 	div#landing.section.active
 		a(href="images/metlife.pdf" target="_blank" onclick="ga('send', 'pageview', '/tnc')")
 					div.tnc 
