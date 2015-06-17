@@ -48,7 +48,7 @@ require(['class/SectionBase', 'class/SectionManager', 'class/CommonObject', 'cla
     _co.fbShare = function(){
         FB.ui({
             method: 'share',
-            href: 'http://metlife-gogoal-life.herokuapp.com'
+            href: 'https://www.stage.metlife.com.hk/gogoallife'
         }, function(response){});
     };
     _co.sectionManager = new SM({

@@ -31,9 +31,10 @@ canvas{ display:none !important; opacity: 0!important; }
 .fancybox-close{ display: none; }
 #thankyou{
     height:795px; background-image: url(../images/guide-thankyou.jpg); overflow: hidden;
-    .facebookShare{ 
-        width: 109px; height: 37px; position: absolute; top: 465px; left: 350px;
-        background-repeat: no-repeat; background-size: contain;
+    .facebookShare { 
+        width: 115px; height: 40px; 
+        position: absolute; top: 465px; left: 350px;
+        background-repeat: no-repeat;
         background-image: url(../images/btn-facebook-share.png);
     } 
 }
@@ -114,8 +115,8 @@ canvas{ display:none !important; opacity: 0!important; }
 }
 .wrapper{ width:810px; margin:0 auto; position:relative; }
 #landing{
-    // height: 795px; 
-    height: 692px; 
+    height: 795px; 
+    // height: 692px; 
     overflow: hidden;
     .upper{
         width:100%; height:692px; background-image: url(../images/landing.jpg);
@@ -133,7 +134,8 @@ canvas{ display:none !important; opacity: 0!important; }
         }
     }
     .lower{
-        position:relative; background-color: #fff; display:none;
+        position:relative; background-color: #fff; 
+        // display:none;
         &.active{ top:-100px !important; }
         .instagram{ 
             width:80px; height:79px; background-image: url(../images/instagram-hash.png); 
@@ -174,7 +176,10 @@ canvas{ display:none !important; opacity: 0!important; }
     .section{ width: 640px; }
     #thankyou{ 
         height:1045px; background-image: url(../images/mobile/guide-thankyou.jpg); 
-        .facebookShare{ top: 405px; left: 275px; }
+        .facebookShare{ 
+            top: 405px; left: 275px; background-size: contain;
+            background-image: url(../images/btn-facebook-share-highres.png); 
+        }
     }
     .mobileArrow{
         width: 180px; height: 50px; z-index: 10; left: 50%; margin-left: -90px; top: -70px;
@@ -233,8 +238,8 @@ canvas{ display:none !important; opacity: 0!important; }
         }
     }
     #landing{
-        // height:1045px;
-        height:938px;
+        height:1045px;
+        // height:938px;
         .upper{ 
             height:938px; background-image: url(../images/mobile/landing.jpg); 
             .enterBtn{ 
