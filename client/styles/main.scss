@@ -15,16 +15,16 @@ canvas{ display:none !important; opacity: 0!important; }
     &.active{ display:block; }
 }
 .backBtn{
-      position: absolute;
-  top: 23px; cursor:pointer;
-  left: 25px;
-  color: #FFF;
-  font-size: 18px;
-  background-image: url(/images/arrow-left-icon.png);
-  padding-left: 26px;
-  background-position: left center;
-  background-repeat: no-repeat;
-  height: 23px;
+    position: absolute;
+    top: 23px; cursor:pointer;
+    left: 25px;
+    color: #FFF;
+    font-size: 18px;
+    background-image: url(/images/arrow-left-icon.png);
+    padding-left: 26px;
+    background-position: left center;
+    background-repeat: no-repeat;
+    height: 23px;
 }
 .fancybox-next span{ visibility: visible; }
 .fancybox-prev span{ visibility: visible; }
@@ -115,8 +115,8 @@ canvas{ display:none !important; opacity: 0!important; }
 }
 .wrapper{ width:810px; margin:0 auto; position:relative; }
 #landing{
-    height: 795px; 
-    // height: 692px; 
+    // height: 795px; 
+    height: 692px; 
     overflow: hidden;
     .upper{
         width:100%; height:692px; background-image: url(../images/landing.jpg);
@@ -135,7 +135,7 @@ canvas{ display:none !important; opacity: 0!important; }
     }
     .lower{
         position:relative; background-color: #fff; 
-        // display:none;
+        display:none;
         &.active{ top:-100px !important; }
         .instagram{ 
             width:80px; height:79px; background-image: url(../images/instagram-hash.png); 
@@ -163,13 +163,14 @@ canvas{ display:none !important; opacity: 0!important; }
 .mobile{
     background-color: #3c62bc;
     .wrapper{ width:640px; }
+    .backBtn{ top:103px; }
     .about{ 
-        width: 110px; height: 50px; top: 7px; right: 21px; line-height: 67px; font-size: 18px; color: #FFF;
+        width: 110px; height: 50px; top: 7px; right: 13px; line-height: 67px; font-size: 18px; color: #FFF;
         background-image: url(../images/mobile/op.png);
         &:hover{ background-position: -110px center; }
     }
     .tnc{ 
-        width: 130px; height: 60px; top: 2px; right: 174px; line-height: 67px; font-size: 18px; color: #FFF; 
+        width: 130px; height: 60px; top: 2px; right: 164px; line-height: 67px; font-size: 18px; color: #FFF; 
         background-image: url(../images/mobile/tnc.png); 
         &:hover{ background-position: -130px center; }
     }
@@ -238,10 +239,10 @@ canvas{ display:none !important; opacity: 0!important; }
         }
     }
     #landing{
-        height:1045px;
-        // height:938px;
+        // height:1045px;
+        height:960px;
         .upper{ 
-            height:938px; background-image: url(../images/mobile/landing.jpg); 
+            height:960px; background-image: url(../images/mobile/landing.jpg); 
             .enterBtn{ 
                 top: 415px; height:256px; width:330px; left:160px;
                 .normalBtn, .hoverBtn{ 

@@ -21,12 +21,15 @@ require(['class/SectionBase', 'class/SectionManager', 'class/CommonObject', 'cla
 
     _co.formSubmit = function(){
         var submittable = true;
+        var numReg = new RegExp(/^\d+$/);
         $('.formFileld').removeClass('empty');
         if($('#35').val() == ''){ submittable = false; $('.formContainer .date').addClass('empty'); }
         if($('#2').val() == ''){ submittable = false; $('.formContainer .name').addClass('empty'); }
         if($('#3').val() == ''){ 
             submittable = false; $('.formContainer .mobileInput').addClass('empty'); 
         } else if($('#3').val().length != 8){
+            submittable = false; $('.formContainer .mobileInput').addClass('empty'); 
+        } else if(!numReg.test($('#3').val())){
             submittable = false; $('.formContainer .mobileInput').addClass('empty'); 
         }
         if($('#4').val() == ''){ 
