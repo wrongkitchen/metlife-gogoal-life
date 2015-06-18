@@ -1,5 +1,9 @@
 //- Homepage Markup
 extends ./layouts/mobile
 
+block vars
+	-var platform = "mobile"
+	-var initTracking = '/mobile/thankyou'
+
 block content
 	include ./content/thankyou

@@ -1,5 +1,9 @@
 //- Homepage Markup
 extends ./layouts/base
 
+block vars
+	-var platform = "desktop"
+	-var initTracking = '/thankyou'
+
 block content
 	include ./content/thankyou

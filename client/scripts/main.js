@@ -43,6 +43,7 @@ require(['class/SectionBase', 'class/SectionManager', 'class/CommonObject', 'cla
         if(!submittable){
             $('.formContainer').scrollTop(0);
         } else {
+            ga('send', 'event', 'button', 'click', gaPrefix + '/' + 'submit-buttons');
             $('form#21').submit();
         }
         // if($('#34').val() === '')
@@ -51,8 +52,9 @@ require(['class/SectionBase', 'class/SectionManager', 'class/CommonObject', 'cla
     _co.fbShare = function(){
         FB.ui({
             method: 'share',
-            href: 'https://www.stage.metlife.com.hk/gogoallife'
-        }, function(response){});
+            href: 'https://www.metlife.com.hk/gogoallife'
+        }, function(response){
+        });
     };
     _co.sectionManager = new SM({
         sections: { 
