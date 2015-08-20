@@ -119,5 +119,7 @@ require(['class/SectionBase', 'class/SectionManager', 'class/CommonObject', 'cla
     instagramAnimation();
     instagramLightAnimation();
     _co.instagram = new IB();
-
+    window.showFullAlert = function(){
+        $.fancybox({ content:'<div id="fullAlert"></div>', showCloseButton:true, padding:0, margin:0 });
+    };
 });

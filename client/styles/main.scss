@@ -28,7 +28,11 @@ canvas{ display:none !important; opacity: 0!important; }
 }
 .fancybox-next span{ visibility: visible; }
 .fancybox-prev span{ visibility: visible; }
-.fancybox-close{ display: none; }
+#fullAlert{ 
+    width:364px; height:100%; background-image: url(../images/full-alert.jpg); 
+    background-repeat: no-repeat; background-position: center center; background-color: #FFF;
+}
+// .fancybox-close{ display: none; }
 #thankyou{
     height:795px; background-image: url(../images/guide-thankyou.jpg); overflow: hidden;
     .facebookShare { 
