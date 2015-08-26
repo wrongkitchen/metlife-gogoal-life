@@ -116,6 +116,20 @@ require(['class/SectionBase', 'class/SectionManager', 'class/CommonObject', 'cla
             }
         });
     }
+
+    $(".video").click(function() {
+        var href = $(this).attr('href');
+        if(href){
+            $.fancybox({
+                'padding'       : 0,
+                'width'         : 640,
+                'height'        : 480,
+                'href'          : href,
+                'type'          : 'iframe'
+            });
+        }
+        return false;
+    });
     instagramAnimation();
     instagramLightAnimation();
     _co.instagram = new IB();

@@ -117,13 +117,20 @@ canvas{ display:none !important; opacity: 0!important; }
         background-image: url(../images/btn-submit-form.jpg);
     }
 }
+.fancybox-skin{ background-color: #000; }
+.fancybox-close{ 
+    width:53px; height:52px; background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url(../images/video-close.png); 
+    right: -65px; top: 2px;
+}
 .wrapper{ width:810px; margin:0 auto; position:relative; }
 #landing{
     // height: 795px; 
-    height: 692px; 
+    height: 795px; 
     overflow: hidden;
     .upper{
-        width:100%; height:692px; background-image: url(../images/landing.jpg);
+        width:100%; height:795px; background-image: url(../images/landing.jpg);
         overflow: hidden; position:relative;
         .enterBtn{
             height:250px; top: 310px; left: 260px; width:304px;
@@ -136,6 +143,14 @@ canvas{ display:none !important; opacity: 0!important; }
             .normalBtn{ background-position: 0 0; }
             .hoverBtn{ background-position: -304px 0; display:none; }
         }
+    }
+    .videoList{
+        position:absolute; width:100%; height:146px;
+        background-image: url(../images/list-video.png);
+        background-repeat: no-repeat; background-position: center center;
+        padding-top:86px; bottom: 48px; left:0; text-align: center;
+        .videos{ width:510px; margin:0 auto; }
+        .video{ display:block; float:left; width:102px; height:102px; }
     }
     .lower{
         position:relative; background-color: #fff; 
@@ -166,6 +181,7 @@ canvas{ display:none !important; opacity: 0!important; }
 }
 .mobile{
     background-color: #3c62bc;
+    .fancybox-close{ right:0px; top:-70px; background-size:auto; }
     .wrapper{ width:640px; }
     .backBtn{ top:103px; }
     .about{ 
@@ -244,9 +260,9 @@ canvas{ display:none !important; opacity: 0!important; }
     }
     #landing{
         // height:1045px;
-        height:960px;
+        height:1045px;
         .upper{ 
-            height:960px; background-image: url(../images/mobile/landing.jpg); 
+            height:1045px; background-image: url(../images/mobile/landing.jpg); 
             .enterBtn{ 
                 top: 415px; height:256px; width:330px; left:160px;
                 .normalBtn, .hoverBtn{ 
